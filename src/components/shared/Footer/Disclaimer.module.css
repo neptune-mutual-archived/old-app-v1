@@ -1,0 +1,11 @@
+.disclaimer {
+  @apply font-light text-lg text-center tracking-wider border border-gray-600 text-gray-400 rounded-xl;
+  @apply px-4 py-6;
+
+  /* @screen md */
+  @apply md:px-8 md:py-10;
+}
+
+.disclaimer strong {
+  @apply font-medium;
+}

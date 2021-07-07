@@ -1,0 +1,36 @@
+.header {
+  @apply flex justify-center;
+  background-color: #131417;
+
+  @apply lg:fixed lg:top-0 lg:w-full lg:left-0 lg:right-0 lg:h-24; /* header height 24 */
+  @screen lg {
+    z-index: 1;
+  }
+}
+
+.content_wrapper {
+  @apply flex flex-col w-full;
+
+  /* @screen lg */
+  @apply lg:flex-row lg:mt-24; /* header height 24 - margin top */
+}
+
+.sidebar {
+  @apply bg-black text-gray-400 fixed bottom-0 left-0 right-0 flex flex-row flex-wrap overflow-y-auto;
+  z-index: 1;
+
+  /* @screen lg */
+  @apply lg:fixed lg:top-24 lg:left-0 lg:bottom-0 lg:w-28 lg:p-0 lg:flex-col lg:flex-nowrap; /* header height 24 - top */
+}
+
+.main {
+  @apply flex-grow text-white bg-gray-900 pb-24;
+  /* background-color: #131417; */
+  /* header height 24 - top & sidebar height approx */
+  min-height: calc(100vh - 6rem - 3rem);
+
+  @apply lg:ml-28 lg:pb-12;
+  @screen lg {
+    min-height: calc(100vh - 6rem); /* header height 24 - top */
+  }
+}

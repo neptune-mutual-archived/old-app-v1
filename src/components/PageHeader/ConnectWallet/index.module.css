@@ -1,0 +1,11 @@
+.disconnected {
+  @apply h-8 py-2 px-6 text-white text-base font-medium rounded-md flex items-center justify-center bg-blue-500 hover:bg-blue-600;
+}
+
+.connected {
+  @apply h-8 py-2 px-6 text-black text-base font-medium rounded-md flex items-center justify-center bg-blue-300;
+}
+
+.networkName {
+  @apply h-8 py-2 px-6 text-blue-500 text-base font-medium rounded-md flex items-center justify-center bg-blue-900 bg-opacity-25;
+}

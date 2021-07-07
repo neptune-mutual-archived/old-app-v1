@@ -1,0 +1,19 @@
+.ribbon {
+  @apply w-full flex flex-wrap gap-8 justify-center items-center mt-4 py-4 px-10 text-2xl leading-none tracking-wider;
+
+  background-image: linear-gradient(
+    to right,
+    #0e1115 0%,
+    #232525 50%,
+    #0e1115 100%
+  );
+
+  @apply xl:w-auto xl:gap-8 xl:absolute xl:right-0 xl:top-20 xl:mt-2 xl:py-2 xl:pl-6 xl:pr-10;
+  @screen xl {
+    background-image: linear-gradient(to right, #0e1115 0%, #232525 100%);
+  }
+}
+
+.ribbon__token {
+  @apply p-2 rounded-md bg-blue-900 bg-opacity-25 text-blue-400;
+}

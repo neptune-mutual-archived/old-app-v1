@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  /* Chrome, Safari, Edge, Opera */
+  .no-arrow-input::-webkit-outer-spin-button,
+  .no-arrow-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  .no-arrow-input[type='number'] {
+    -moz-appearance: textfield;
+  }
+}
+
+html,
+body {
+  @apply text-white;
+  background-color: #191a1f;
+}

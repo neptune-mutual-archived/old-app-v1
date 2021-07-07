@@ -1,0 +1,10 @@
+.link {
+  @apply flex flex-col flex-1 justify-start items-center self-stretch shadow-sm px-4 pt-3 pb-1 border-opacity-75 border-t-4 border-transparent hover:bg-gray-900 hover:text-white;
+  font-size: 0.625rem;
+  @apply lg:flex lg:flex-col lg:flex-grow-0 lg:gap-1 lg:justify-center lg:items-center lg:shadow-sm lg:px-4 lg:py-6 lg:border-t-0 lg:border-b-4 lg:text-xs;
+}
+
+.link--selected {
+  @apply border-blue-500 text-white;
+  @apply lg:bg-blue-900 lg:bg-opacity-25;
+}

@@ -1,6 +1,6 @@
 import features from './features'
 import abis from '../abis'
-import { addresses } from '../constants/addresses.testnet'
+import { addresses } from '../constants/addresses.bsc-testnet'
 
 const getTokenSwapLink = (output, input) => {
   if (input) {

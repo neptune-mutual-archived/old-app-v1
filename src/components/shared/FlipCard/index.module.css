@@ -7,38 +7,35 @@
   /* Do not do `overflow-hidden` - will break the flip*/
   @apply relative h-full w-full border border-white border-opacity-10;
   @apply hover:drop-shadow-lg hover:shadow-2xl;
+  @apply md:flex-row;
 
   transform-style: preserve-3d;
   transition: 1s transform, 0.5s box-shadow;
+}
 
-  .rotate & {
-    transform: rotateX(-180deg);
-  }
-
-  /* @screen md */
-  @apply md:flex-row;
+.rotate .flip_card_body {
+  @apply -rotate-180;
 }
 
 .flip_card_front {
   @apply relative h-full w-full;
   transition: 1s opacity;
+}
 
-  .rotate & {
-    opacity: 0;
-    transition: 1s opacity;
-  }
+.rotate .flip_card_front {
+  opacity: 0;
+  transition: 1s opacity;
 }
 
 .flip_card_back {
-  @apply absolute top-0 right-0 bottom-0 left-0; /* bg-black;*/
-  transform: rotateX(-180deg);
-  transition: 1s opacity;
-  opacity: 0;
+  @apply absolute top-0 right-0 bottom-0 left-0 opacity-0 -rotate-180; /* bg-black;*/
 
-  .rotate & {
-    opacity: 1;
-    transition: 1s opacity;
-  }
+  transition: 1s opacity;
+}
+
+.rotate .flip_card_back {
+  opacity: 1;
+  transition: 1s opacity;
 }
 
 .flip_card_front,

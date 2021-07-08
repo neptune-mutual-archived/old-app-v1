@@ -1,5 +1,5 @@
-import testnet from './bond.testnet'
-import mainnet from './bond.mainnet'
+import testnet from './bond.bsc-testnet'
+import mainnet from './bond.bsc-mainnet'
 import { FALLBACK_CHAIN_ID } from '../constants/chains'
 
 /**

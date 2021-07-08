@@ -1,3 +1,5 @@
+import React from 'react'
+
 const LPDisclaimer = () => {
   return (
     <div className='p-2 xl:pl-10'>

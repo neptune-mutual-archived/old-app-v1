@@ -1,3 +1,4 @@
+import React from 'react'
 import { convertFromUnits, getRelativePercent } from '../../utils/bignumbers'
 
 const ProgressBar = ({ min, max, now }) => {

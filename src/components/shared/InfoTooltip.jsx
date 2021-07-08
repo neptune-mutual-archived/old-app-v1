@@ -1,3 +1,4 @@
+import React from 'react'
 import Tippy from '@tippyjs/react'
 import InfoIcon from './icons/InfoIcon'
 

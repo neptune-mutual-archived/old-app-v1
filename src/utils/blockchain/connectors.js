@@ -5,6 +5,7 @@ import { BscConnector } from '@binance-chain/bsc-connector'
 import { networks } from '../../config/networks'
 import rpcUrls from '../../config/constants/rpcUrls'
 import { POLLING_INTERVAL } from '../../config/constants/connectors'
+import { ConnectorNames } from '../../config/connectors'
 
 const supportedChainIds = networks.filter((x) => !x.disabled).map((x) => x.id)
 
@@ -36,4 +37,22 @@ export const getWalletConnect = (chainId) => {
   })
 
   return walletconnect
+}
+
+export const getConnectorByName = (name, chainId) => {
+  if (!chainId) return null
+
+  switch (name) {
+    case ConnectorNames.Injected:
+      return getInjectedConnector(chainId)
+
+    case ConnectorNames.BSC:
+      return getBscConnector(chainId)
+
+    case ConnectorNames.WalletConnect:
+      return getWalletConnect(chainId)
+
+    default:
+      return null
+  }
 }

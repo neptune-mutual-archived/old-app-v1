@@ -1,6 +1,5 @@
 .ribbon {
   @apply w-full flex justify-center items-center mt-4 py-4 px-10 text-2xl leading-none tracking-wider;
-
   background-image: linear-gradient(
     90deg,
     rgba(14, 17, 21, 0.84) 0%,
@@ -8,8 +7,12 @@
     rgba(14, 17, 21, 0.84) 100%
   );
 
+  /* @screen xl */
   @apply xl:w-auto xl:mt-2 xl:absolute xl:right-0 xl:top-20;
-  @screen xl {
+}
+
+@screen xl {
+  .ribbon {
     background-image: linear-gradient(
       90deg,
       rgba(14, 17, 21, 0.84) 0%,

@@ -2,8 +2,11 @@
   @apply flex justify-center;
   background-color: #131417;
 
+  /* @screen lg */
   @apply lg:fixed lg:top-0 lg:w-full lg:left-0 lg:right-0 lg:h-24; /* header height 24 */
-  @screen lg {
+}
+@screen lg {
+  .header {
     z-index: 1;
   }
 }
@@ -29,8 +32,11 @@
   /* header height 24 - top & sidebar height approx */
   min-height: calc(100vh - 6rem - 3rem);
 
+  /* @screen lg */
   @apply lg:ml-28 lg:pb-12;
-  @screen lg {
+}
+@screen lg {
+  .main {
     min-height: calc(100vh - 6rem); /* header height 24 - top */
   }
 }

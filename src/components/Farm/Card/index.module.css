@@ -32,8 +32,12 @@
 .primary_pane {
   @apply flex flex-col justify-center items-center bg-black w-full pt-8 pb-2;
 
+  /* @screen md */
   @apply md:w-96;
-  @screen md {
+}
+
+@screen md {
+  .primary_pane {
     min-width: 15rem;
   }
 }

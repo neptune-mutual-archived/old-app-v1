@@ -1,6 +1,6 @@
 // Set of helper functions to facilitate wallet setup
-import chains, { FALLBACK_CHAIN_ID } from '../config/constants/chains'
-import { wallets } from '../config/wallets'
+import { ConnectorNames } from '../config/connectors'
+import chains from '../config/constants/chains'
 
 const getParams = (chainId) => {
   const { networkId, ...params } = chains.find((x) => x.networkId === chainId)
@@ -12,38 +12,45 @@ const getParams = (chainId) => {
  * Prompt the user to add BSC as a network on Metamask, or switch to BSC if the wallet is on a different network
  * @returns {boolean} true if the setup succeeded, false otherwise
  */
-export const setupNetwork = async (selectedChainId) => {
-  const chainId = selectedChainId || FALLBACK_CHAIN_ID
-
-  const provider = window.ethereum
-
-  // try {
-  //   // Try BinanceChainWallet
-  //   const binanceProvider = window.BinanceChain
-
-  //   await binanceProvider.switchNetwork(String(selectedChainId))
-  // } catch (error) {
-  //   console.error("Can't setup the BSC network on binance wallet")
-  //   return false
-  // }
-
-  if (!provider) {
-    console.error(
-      "Can't setup the BSC network on metamask because window.ethereum is undefined"
-    )
+export const setupNetwork = async (selectedChainId, connectorName) => {
+  if (!selectedChainId) {
     return false
   }
 
-  try {
-    await provider.request({
-      method: 'wallet_addEthereumChain',
-      params: [getParams(chainId)]
-    })
+  switch (connectorName) {
+    case ConnectorNames.Injected: {
+      const provider = window.ethereum
 
-    return true
-  } catch (error) {
-    console.error(error)
-    return false
+      if (!provider) {
+        console.error("Can't setup network - window.ethereum is undefined")
+        return false
+      }
+
+      try {
+        await provider.request({
+          method: 'wallet_addEthereumChain',
+          params: [getParams(selectedChainId)]
+        })
+
+        return true
+      } catch (error) {
+        console.error(error)
+        return false
+      }
+    }
+
+    case ConnectorNames.BSC:
+      try {
+        const binanceProvider = window.BinanceChain
+        await binanceProvider.switchNetwork(selectedChainId.toString())
+        return true
+      } catch (error) {
+        console.error(error)
+        return false
+      }
+
+    default:
+      return false
   }
 }
 
@@ -75,9 +82,4 @@ export const registerToken = async (
   })
 
   return tokenAdded
-}
-
-export const getConnector = (walletId, networkId) => {
-  const getter = wallets.find((x) => x.id === walletId).connector
-  return getter(networkId)
 }

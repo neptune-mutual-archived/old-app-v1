@@ -1,5 +1,5 @@
-import * as testnet from '../constants/addresses.testnet'
-import * as mainnet from '../constants/addresses.mainnet'
+import * as testnet from '../constants/addresses.bsc-testnet'
+import * as mainnet from '../constants/addresses.bsc-mainnet'
 import abis from '../abis'
 import { FALLBACK_CHAIN_ID } from '../constants/chains'
 

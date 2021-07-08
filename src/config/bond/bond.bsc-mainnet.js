@@ -1,6 +1,6 @@
 import { convertToUnits } from '../../utils/bignumbers'
 import abis from '../abis'
-import { addresses } from '../constants/addresses.mainnet'
+import { addresses } from '../constants/addresses.bsc-mainnet'
 
 const LOCKING_PERIOD = 90 * 24 * 60 * 60 // Seconds - 90 days
 

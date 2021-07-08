@@ -1,5 +1,5 @@
-import testnet from './pool.testnet'
-import mainnet from './pool.mainnet'
+import testnet from './pool.bsc-testnet'
+import mainnet from './pool.bsc-mainnet'
 import { FALLBACK_CHAIN_ID } from '../constants/chains'
 
 export const getPool = (networkId = FALLBACK_CHAIN_ID) => {

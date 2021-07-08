@@ -1,6 +1,6 @@
 import abis from '../abis'
 import { convertToUnits } from '../../utils/bignumbers'
-import { addresses } from '../constants/addresses.testnet'
+import { addresses } from '../constants/addresses.bsc-testnet'
 
 const getId = (str) => '97_' + str
 

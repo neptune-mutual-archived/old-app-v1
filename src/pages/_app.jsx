@@ -5,6 +5,7 @@ import { useEffect } from 'react'
 
 import 'tippy.js/animations/perspective.css'
 import 'tippy.js/dist/tippy.css'
+
 import ErrorBoundary from '../components/ErrorBoundary'
 import PageWrapper from '../components/PageWrapper'
 import { LanguageProvider } from '../i18n'
@@ -23,7 +24,6 @@ const MyApp = ({ Component, pageProps }) => {
       <ErrorBoundary>
         <Head>
           <title>{title}</title>
-
           <meta name='description' content={description} />
 
           <meta property='og:title' content={title} />

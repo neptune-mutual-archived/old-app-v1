@@ -12,7 +12,7 @@ const Option = ({ onClick, name, icon, isActive, isDisabled }) => {
       onClick={onClick}
     >
       <div className='relative w-12 h-12 rounded-full bg-blue-900 bg-opacity-50'>
-        {icon}
+        <img src={icon} width='48' height='48' />
         {isActive && (
           <span className='absolute -right-1 -bottom-1 text-green-600 bg-white rounded-full'>
             <CheckIcon className='w-5 h-5' />

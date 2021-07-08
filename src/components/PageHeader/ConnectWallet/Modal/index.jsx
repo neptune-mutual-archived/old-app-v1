@@ -13,7 +13,7 @@ import { classNames } from '../../../../utils/class-names'
 
 const Content = ({ closeModal }) => {
   const { active } = useWeb3React()
-  const { connect, disconnect } = useAuth()
+  const { login, logout } = useAuth()
 
   const [networkId, setNetworkId] = useState()
   const [walletId, setWalletId] = useState()
@@ -24,14 +24,14 @@ const Content = ({ closeModal }) => {
     }
 
     if (active) {
-      disconnect()
+      logout()
     }
 
-    const done = connect(networkId, walletId)
+    const wallet = wallets.find((x) => x.id === walletId)
+    const connectorName = wallet.connectorName
 
-    if (done) {
-      closeModal()
-    }
+    login(connectorName, networkId)
+    closeModal()
   }
 
   return (

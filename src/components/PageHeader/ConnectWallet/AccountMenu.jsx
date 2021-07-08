@@ -9,9 +9,11 @@ import {
   SwitchVerticalIcon
 } from '@heroicons/react/outline'
 import { truncateAddress } from '../../../utils/address'
+import useAuth from '../../../hooks/useAuth'
 
 const AccountMenu = ({ openConnectModal, openTransactionModal }) => {
-  const { account, deactivate, chainId } = useWeb3React()
+  const { logout } = useAuth()
+  const { account, chainId } = useWeb3React()
 
   const network = networks.find((x) => x.id === chainId) || {}
 
@@ -23,7 +25,7 @@ const AccountMenu = ({ openConnectModal, openTransactionModal }) => {
 
   return (
     <div className='flex gap-4 flex-wrap justify-end'>
-      <div className={styles.networkName}>{network.name}</div>
+      <div className={styles.networkName}>{network.shortName}</div>
 
       <MenuDropdown {...menuProps}>
         <Menu.Items
@@ -64,7 +66,7 @@ const AccountMenu = ({ openConnectModal, openTransactionModal }) => {
             <Menu.Item>
               {({ active }) => (
                 <button
-                  onClick={deactivate}
+                  onClick={logout}
                   className={`${
                     active
                       ? 'bg-gray-600 text-gray-300'

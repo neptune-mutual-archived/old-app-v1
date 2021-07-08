@@ -1,14 +1,15 @@
 import features from './features'
 import abis from '../abis'
-import { addresses } from '../constants/addresses.mainnet'
+import { addresses } from '../constants/addresses.bsc-mainnet'
 import { convertFromUnits } from '../../utils/bignumbers'
 
 const getTokenSwapLink = (output, input) => {
+  const baseUrl = `https://exchange.pancakeswap.finance/#/swap`
   if (input) {
-    return `https://exchange.pancakeswap.finance/#/swap?outputCurrency=${output}&inputCurrency=${input}`
+    return `${baseUrl}?outputCurrency=${output}&inputCurrency=${input}`
   }
 
-  return `https://exchange.pancakeswap.finance/#/swap?outputCurrency=${output}`
+  return `${baseUrl}?outputCurrency=${output}`
 }
 
 const getId = (str) => '56_' + str

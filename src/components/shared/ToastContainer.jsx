@@ -1,4 +1,4 @@
-/* Author: Dalibor Kundrat  https://github.com/damikun */
+/* Inspired from https://github.com/damikun/React-Toast */
 import React, { useContext } from 'react'
 import { ToastContext } from '../../context/toast'
 import { classNames } from '../../utils/class-names'

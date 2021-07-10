@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react'
 
 import { RUN_EVERY } from '../config/constants'
 import { useDiscovery } from '../hooks/contracts/useDiscovery'
+import { sumOf } from '../utils/bignumbers'
+import { getBurnedByChainId } from '../utils/blockchain/burned'
 
 // has data of all stats
 export const StatsContext = React.createContext()
@@ -29,7 +31,9 @@ export const StatsProvider = ({ children }) => {
       setTotalNepSupply(result)
 
       result = await discoveryInstance.totalBurned()
-      setTotalBurned(result)
+      console.log((result, getBurnedByChainId(chainId)))
+      console.log(sumOf(result, getBurnedByChainId(chainId)))
+      setTotalBurned(sumOf(result, getBurnedByChainId(chainId)))
 
       result = await discoveryInstance.totalRewardAllocation()
       setTotalRewardAllocation(result)

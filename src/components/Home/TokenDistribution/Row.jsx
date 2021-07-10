@@ -1,6 +1,7 @@
+import React from 'react'
 import { classNames } from '../../../utils/class-names'
 
-export const Row = ({ name, amount = 0, percent = 0, color }) => {
+export const Row = ({ name, amount = 0, percent = 0, color, tooltip }) => {
   return (
     <tr>
       <td className='px-4 py-3 whitespace-nowrap'>
@@ -13,7 +14,7 @@ export const Row = ({ name, amount = 0, percent = 0, color }) => {
           </div>
         </div>
       </td>
-      <td className='px-4 py-3 whitespace-nowrap'>
+      <td className='px-4 py-3 whitespace-nowrap' title={tooltip}>
         <div className=' text-gray-300'>{amount} NEP</div>
       </td>
       <td className='px-4 py-3 whitespace-nowrap'>

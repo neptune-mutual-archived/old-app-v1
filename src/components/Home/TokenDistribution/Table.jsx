@@ -1,3 +1,4 @@
+import React from 'react'
 import { Row } from './Row'
 
 export const SupplyTable = ({ distros }) => {
@@ -37,6 +38,7 @@ export const SupplyTable = ({ distros }) => {
                     amount={distro.amount}
                     percent={distro.percent}
                     color={distro.color}
+                    tooltip={distro.tooltip}
                   />
                 ))}
               </tbody>

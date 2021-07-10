@@ -82,10 +82,6 @@ export const sumOf = (...amounts) => {
     }
   })
 
-  if (sum.toString() === 'NaN') {
-    console.log('NaN', amounts)
-  }
-
   return sum
 }
 

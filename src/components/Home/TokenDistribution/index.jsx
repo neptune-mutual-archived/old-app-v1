@@ -1,12 +1,14 @@
+import React from 'react'
 import useBondsContext from '../../../hooks/useBondsContext'
 import { usePoolContext } from '../../../hooks/usePoolContext'
 import { useStatsContext } from '../../../hooks/useStatsContext'
 import {
   amountsToPercentages,
   calcPercent,
+  convertFromUnits,
   sort
 } from '../../../utils/bignumbers'
-import { formatWeiToNumber } from '../../../utils/formatter'
+import { amountFormatter, formatWeiToNumber } from '../../../utils/formatter'
 import { Card } from '../Card'
 import { Bar } from './Bar'
 import { SupplyTable } from './Table'
@@ -32,12 +34,14 @@ export const TokenDistribution = () => {
       name: 'Total Burned',
       color: 'bg-white',
       amount: formatWeiToNumber(totalBurned || 0),
+      tooltip: amountFormatter(convertFromUnits(totalBurned || 0).toNumber()),
       percent: burnedNEPPercent
     },
     {
       name: 'Locked (Pool)',
       color: 'bg-green-400',
       amount: formatWeiToNumber(poolNEPLocked || 0),
+      tooltip: amountFormatter(convertFromUnits(poolNEPLocked || 0).toNumber()),
       percent: poolNEPLockedPercent,
       fillPercent: fills[0]
     },
@@ -45,6 +49,7 @@ export const TokenDistribution = () => {
       name: 'Locked (Bond)',
       color: 'bg-orange-400',
       amount: formatWeiToNumber(bondNEPLocked || 0),
+      tooltip: amountFormatter(convertFromUnits(bondNEPLocked || 0).toNumber()),
       percent: bondNEPLockedPercent,
       fillPercent: fills[1]
     },
@@ -52,6 +57,7 @@ export const TokenDistribution = () => {
       name: 'Locked (Protocol)',
       color: 'bg-blue-400',
       amount: '0.00',
+      tooltip: amountFormatter(0),
       percent: 0,
       fillPercent: fills[2]
     }

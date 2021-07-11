@@ -31,8 +31,6 @@ export const StatsProvider = ({ children }) => {
       setTotalNepSupply(result)
 
       result = await discoveryInstance.totalBurned()
-      console.log((result, getBurnedByChainId(chainId)))
-      console.log(sumOf(result, getBurnedByChainId(chainId)))
       setTotalBurned(sumOf(result, getBurnedByChainId(chainId)))
 
       result = await discoveryInstance.totalRewardAllocation()

@@ -31,7 +31,7 @@ const FarmHero = () => {
           href={HOW_DOES_FARM_WORK}
           target='_blank'
           rel='noopener noreferrer'
-          className='font-medium underline text-lg leading-tight'
+          className='font-medium underline text-sm md:text-lg leading-tight'
         >
           How Does This Work?
         </a>
@@ -39,7 +39,7 @@ const FarmHero = () => {
           href={RISK_FACTORS}
           target='_blank'
           rel='noopener noreferrer'
-          className='font-medium underline text-lg leading-tight'
+          className='font-medium underline text-sm md:text-lg leading-tight'
         >
           Risk factors
         </a>

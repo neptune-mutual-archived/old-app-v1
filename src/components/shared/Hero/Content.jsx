@@ -1,6 +1,6 @@
 const HeroContent = ({ children }) => {
   return (
-    <h3 className='pt-8 xl:pt-10 pb-6 text-lg font-normal text-gray-400 max-w-prose'>
+    <h3 className='py-5 xl:pt-10 xl:pb-6 text-sm md:text-lg font-normal text-gray-400 max-w-prose'>
       {children}
     </h3>
   )

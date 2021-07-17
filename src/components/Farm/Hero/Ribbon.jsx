@@ -14,7 +14,7 @@ const Ribbon = () => {
           <TokensIcon />
         </div>
         <div>
-          <div className='font-normal font-numbers text-lg'>
+          <div className='font-normal font-numbers text-sm md:text-lg'>
             ${' '}
             <CounterAnimation
               value={convertFromUnits(getSumOfTVL() || 0)
@@ -22,7 +22,7 @@ const Ribbon = () => {
                 .toNumber()}
             />
           </div>
-          <div className='font-normal text-sm whitespace-nowrap'>
+          <div className='font-normal text-xs md:text-sm whitespace-nowrap'>
             Total Value Locked
           </div>
         </div>
@@ -32,7 +32,7 @@ const Ribbon = () => {
           <TokensIcon />
         </div>
         <div>
-          <div className='font-normal font-numbers text-lg'>
+          <div className='font-normal font-numbers text-sm md:text-lg'>
             <CounterAnimation
               value={convertFromUnits(totalNEPLocked || 0)
                 .decimalPlaces(6)
@@ -40,7 +40,7 @@ const Ribbon = () => {
             />{' '}
             NEP
           </div>
-          <div className='font-normal text-sm whitespace-nowrap'>
+          <div className='font-normal text-xs md:text-sm whitespace-nowrap'>
             Total NEP Locked
           </div>
         </div>

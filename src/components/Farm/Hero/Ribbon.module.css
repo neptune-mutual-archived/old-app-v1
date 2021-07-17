@@ -1,5 +1,5 @@
 .ribbon {
-  @apply w-full flex flex-wrap gap-8 justify-center items-center mt-4 py-4 px-10 text-2xl leading-none tracking-wider;
+  @apply w-full flex flex-wrap gap-8 justify-center items-center mt-4 py-4 px-10 leading-none tracking-wider;
   background-image: linear-gradient(
     to right,
     #0e1115 0%,

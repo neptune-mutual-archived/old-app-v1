@@ -5,6 +5,7 @@ export const OutlineButton = ({
   children,
   isProcessing,
   isDisabled,
+  large,
   ...props
 }) => {
   let btnClass =
@@ -17,8 +18,9 @@ export const OutlineButton = ({
     <button
       type='button'
       className={classNames(
-        'inline-flex items-center px-4 py-2 border-2 border-white text-sm font-medium rounded-md transition ease-in-out duration-150',
-        btnClass
+        'inline-flex items-center border-2 border-white font-medium rounded-md transition ease-in-out duration-150',
+        btnClass,
+        large ? 'px-2 py-1' : 'text-sm px-4 py-2'
       )}
       disabled={isProcessing || isDisabled}
       {...props}

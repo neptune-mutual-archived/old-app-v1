@@ -38,7 +38,7 @@ export default [
       address: addresses.contracts.v1.FARM,
       abi: abis.farm
     },
-    features: [features.NO_FEE, features.LP_REWARDS, features.PANCAKESWAP],
+    features: [features.NO_FEE, features.PANCAKESWAP],
     hot: true,
     defaultPriority: 0,
     live: true,

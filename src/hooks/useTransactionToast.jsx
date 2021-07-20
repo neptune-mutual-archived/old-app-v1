@@ -66,7 +66,7 @@ export const useTransactionToast = () => {
 
       await toast.remove(id)
 
-      if (type==='Success') {
+      if (type === 'Success') {
         toast.pushSuccess({
           title,
           message: (
@@ -77,7 +77,7 @@ export const useTransactionToast = () => {
           ),
           lifetime: SUCCESS_TIMEOUT
         })
-      }else{
+      } else {
         toast.pushError({
           title,
           message: (
@@ -88,9 +88,7 @@ export const useTransactionToast = () => {
           ),
           lifetime: ERROR_TIMEOUT
         })
-
       }
-        
     } catch (error) {
       updateToError(chainId, account, tx.hash)
       toast.pushError({

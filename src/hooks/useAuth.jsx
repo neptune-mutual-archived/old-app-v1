@@ -49,17 +49,16 @@ const useAuth = () => {
               )
               const network = networks.find((x) => x.id === networkId)
 
-              toast &&
-                toast.pushError({
-                  title: 'Wrong network',
-                  message: (
-                    <p>
-                      Please switch to <strong>{network.name}</strong> in your{' '}
-                      <strong>{wallet.name}</strong> wallet
-                    </p>
-                  ),
-                  lifetime: ERROR_TIMEOUT
-                })
+              toast?.pushError({
+                title: 'Wrong network',
+                message: (
+                  <p>
+                    Please switch to <strong>{network.name}</strong> in your{' '}
+                    <strong>{wallet.name}</strong> wallet
+                  </p>
+                ),
+                lifetime: ERROR_TIMEOUT
+              })
             }
           } else {
             window.localStorage.removeItem(ACTIVE_CONNECTOR_KEY)
@@ -69,7 +68,11 @@ const useAuth = () => {
               error instanceof NoEthereumProviderError ||
               error instanceof NoBscProviderError
             ) {
-              console.log('Provider Error: No provider was found')
+              toast?.pushError({
+                title: 'Provider Error',
+                message: 'Could not connect. No provider found',
+                lifetime: ERROR_TIMEOUT
+              })
             } else if (
               error instanceof UserRejectedRequestErrorInjected ||
               error instanceof UserRejectedRequestErrorWalletConnect
@@ -78,9 +81,11 @@ const useAuth = () => {
                 const walletConnector = connector
                 walletConnector.walletConnectProvider = null
               }
-              console.log(
-                'Authorization Error: Please authorize to access your account'
-              )
+              toast?.pushError({
+                title: 'Authorization Error',
+                message: 'Please authorize to access your account',
+                lifetime: ERROR_TIMEOUT
+              })
             } else {
               console.log(error.name, error.message)
             }

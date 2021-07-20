@@ -1,3 +1,3 @@
 .title {
-  @apply text-2xl md:text-5xl font-medium;
+  @apply text-2xl md:text-5xl font-medium px-5 xl:pl-10;
 }

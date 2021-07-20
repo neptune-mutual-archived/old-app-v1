@@ -26,12 +26,12 @@ const FarmHero = () => {
         PancakeSwap. Get up to {maxAPY} APY during initial token farming period.
       </HeroContent>
 
-      <div className='flex flex-wrap gap-6'>
+      <div className='flex flex-wrap px-5 xl:pl-10'>
         <a
           href={HOW_DOES_FARM_WORK}
           target='_blank'
           rel='noopener noreferrer'
-          className='font-medium underline text-sm md:text-lg leading-tight'
+          className='font-medium underline text-sm md:text-lg leading-tight inline-block mr-3'
         >
           How Does This Work?
         </a>
@@ -39,7 +39,7 @@ const FarmHero = () => {
           href={RISK_FACTORS}
           target='_blank'
           rel='noopener noreferrer'
-          className='font-medium underline text-sm md:text-lg leading-tight'
+          className='font-medium underline text-sm md:text-lg leading-tight inline-block ml-3'
         >
           Risk factors
         </a>

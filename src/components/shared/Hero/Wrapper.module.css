@@ -1,7 +1,7 @@
 .wrapper {
-  @apply bg-gray-900 text-white pt-10 px-5;
+  @apply bg-gray-900 text-white pt-10;
   background-color: #0d0f12;
 
   /* @screen xl */
-  @apply xl:py-20 xl:pl-10 xl:relative;
+  @apply xl:py-20 xl:relative;
 }

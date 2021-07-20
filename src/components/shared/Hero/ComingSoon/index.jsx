@@ -4,9 +4,9 @@ import {
   DOCUMENTATION_URL
 } from '../../../../config/constants/external-links'
 import { Links } from './links'
-import Illustration1 from '../../../../images/illustrations/one.svg'
-import Illustration2 from '../../../../images/illustrations/two.svg'
-import Illustration3 from '../../../../images/illustrations/three.svg'
+import Illustration1 from './illustrations/one'
+import Illustration2 from './illustrations/two'
+import Illustration3 from './illustrations/three'
 
 const ComingSoon = ({ children }) => {
   const router = useRouter()
@@ -21,9 +21,12 @@ const ComingSoon = ({ children }) => {
   }
 
   return (
-    <div className='w-full h-full flex justify-center items-center py-12 px-4'>
+    <div
+      className='w-full h-full flex justify-center items-center py-12 px-4'
+      style={{ maxWidth: '100vw' }}
+    >
       <div className='max-w-screen-sm text-center'>
-        <div className='mx-auto mb-8 md:mb-12'>
+        <div className='mx-auto mb-2 md:mb-12'>
           <Illustration className='max-w-full mx-auto' />
         </div>
         <p className='text-gray-400 text-lg'>

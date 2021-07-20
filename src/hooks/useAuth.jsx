@@ -35,31 +35,33 @@ const useAuth = () => {
         activate(connector, async (error) => {
           if (error instanceof UnsupportedChainIdError) {
             const hasSetup = await setupNetwork(networkId, connectorName)
+
             if (hasSetup) {
               activate(connector, () => {
                 window.localStorage.removeItem(ACTIVE_CONNECTOR_KEY)
                 window.localStorage.removeItem(ACTIVE_CHAIN_KEY)
               })
-            } else {
-              window.localStorage.removeItem(ACTIVE_CONNECTOR_KEY)
-              window.localStorage.removeItem(ACTIVE_CHAIN_KEY)
-
-              const wallet = wallets.find(
-                (x) => x.connectorName === connectorName
-              )
-              const network = networks.find((x) => x.id === networkId)
-
-              toast?.pushError({
-                title: 'Wrong network',
-                message: (
-                  <p>
-                    Please switch to <strong>{network.name}</strong> in your{' '}
-                    <strong>{wallet.name}</strong> wallet
-                  </p>
-                ),
-                lifetime: ERROR_TIMEOUT
-              })
+              return
             }
+
+            window.localStorage.removeItem(ACTIVE_CONNECTOR_KEY)
+            window.localStorage.removeItem(ACTIVE_CHAIN_KEY)
+
+            const wallet = wallets.find(
+              (x) => x.connectorName === connectorName
+            )
+            const network = networks.find((x) => x.id === networkId)
+
+            toast?.pushError({
+              title: 'Wrong network',
+              message: (
+                <p>
+                  Please switch to <strong>{network.name}</strong> in your{' '}
+                  <strong>{wallet.name}</strong> wallet
+                </p>
+              ),
+              lifetime: ERROR_TIMEOUT
+            })
           } else {
             window.localStorage.removeItem(ACTIVE_CONNECTOR_KEY)
             window.localStorage.removeItem(ACTIVE_CHAIN_KEY)
@@ -73,7 +75,10 @@ const useAuth = () => {
                 message: 'Could not connect. No provider found',
                 lifetime: ERROR_TIMEOUT
               })
-            } else if (
+              return
+            }
+
+            if (
               error instanceof UserRejectedRequestErrorInjected ||
               error instanceof UserRejectedRequestErrorWalletConnect
             ) {
@@ -86,9 +91,10 @@ const useAuth = () => {
                 message: 'Please authorize to access your account',
                 lifetime: ERROR_TIMEOUT
               })
-            } else {
-              console.log(error.name, error.message)
+              return
             }
+
+            console.log(error.name, error.message)
           }
         })
       } else {

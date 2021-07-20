@@ -18,7 +18,18 @@ export const setupNetwork = async (selectedChainId, connectorName) => {
   }
 
   switch (connectorName) {
-    case ConnectorNames.Injected: {
+    case ConnectorNames.BSC:
+      try {
+        const binanceProvider = window.BinanceChain
+        await binanceProvider.switchNetwork(selectedChainId.toString())
+        return true
+      } catch (error) {
+        console.error(error)
+        return false
+      }
+
+    case ConnectorNames.Injected:
+    default: {
       const provider = window.ethereum
 
       if (!provider) {
@@ -38,19 +49,6 @@ export const setupNetwork = async (selectedChainId, connectorName) => {
         return false
       }
     }
-
-    case ConnectorNames.BSC:
-      try {
-        const binanceProvider = window.BinanceChain
-        await binanceProvider.switchNetwork(selectedChainId.toString())
-        return true
-      } catch (error) {
-        console.error(error)
-        return false
-      }
-
-    default:
-      return false
   }
 }
 

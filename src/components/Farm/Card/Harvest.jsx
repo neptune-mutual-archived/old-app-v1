@@ -20,7 +20,7 @@ const Harvest = ({ data }) => {
       })
 
       await transactionPlaced(tx, {
-        title: name,
+        title: data.name,
         feature: 'Harvest',
         textPending: `Harvesting ${rewardAmount} ${data.rewardSymbol}`,
         textSuccess: `Harvested ${rewardAmount} ${data.rewardSymbol}`

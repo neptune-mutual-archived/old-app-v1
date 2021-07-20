@@ -66,16 +66,31 @@ export const useTransactionToast = () => {
 
       await toast.remove(id)
 
-      toast.pushSuccess({
-        title,
-        message: (
-          <>
-            <p>{textSuccess || 'Transaction Successful'}</p>
-            {explorerLink}
-          </>
-        ),
-        lifetime: SUCCESS_TIMEOUT
-      })
+      if (type==='Success') {
+        toast.pushSuccess({
+          title,
+          message: (
+            <>
+              <p>{textSuccess || 'Transaction Successful'}</p>
+              {explorerLink}
+            </>
+          ),
+          lifetime: SUCCESS_TIMEOUT
+        })
+      }else{
+        toast.pushError({
+          title,
+          message: (
+            <>
+              <p>{textPending || 'Transaction Failed'}</p>
+              {explorerLink}
+            </>
+          ),
+          lifetime: ERROR_TIMEOUT
+        })
+
+      }
+        
     } catch (error) {
       updateToError(chainId, account, tx.hash)
       toast.pushError({

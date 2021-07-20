@@ -1,7 +1,8 @@
+import Headroom from 'react-headroom'
+
 import PageHeader from '../PageHeader'
 import PageSidebar from '../PageSidebar'
 import { GlobalProvider } from '../../context/global'
-
 import { useGlobalLoader } from '../../hooks/useGlobalLoader'
 import { useEagerConnect } from '../../hooks/useEagerConnect'
 import { PageLoader } from '../shared/PageLoader'
@@ -22,9 +23,9 @@ const Content = ({ children }) => {
         <PageHeader />
       </header>
       <div className={styles.content_wrapper}>
-        <div className={styles.sidebar}>
+        <Headroom className={styles.sidebar} disableInlineStyles>
           <PageSidebar />
-        </div>
+        </Headroom>
         <main className={styles.main}>{children}</main>
       </div>
     </>

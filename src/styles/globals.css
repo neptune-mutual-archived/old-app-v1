@@ -21,3 +21,46 @@ body {
   @apply text-white;
   background-color: #191a1f;
 }
+
+.headroom {
+  /* same as .sidebar */
+  @apply bg-black text-gray-400 fixed bottom-0 left-0 right-0 flex flex-row flex-wrap overflow-y-auto;
+  z-index: 1;
+
+  /* @screen lg */
+  @apply lg:fixed lg:top-24 lg:left-0 lg:bottom-0 lg:w-28 lg:p-0 lg:flex-col lg:flex-nowrap; /* header height 24 - top */
+}
+
+.headroom--unfixed {
+  transform: translateY(0);
+}
+.headroom--scrolled {
+  transition: transform 200ms ease-in-out;
+}
+.headroom--unpinned {
+  transform: translateY(100%);
+}
+.headroom--pinned {
+  transform: translateY(0%);
+}
+.headroom-wrapper {
+  height: auto !important;
+}
+
+@screen lg {
+  .headroom--unfixed {
+    transform: none;
+  }
+  .headroom--scrolled {
+    transition: none;
+  }
+  .headroom--unpinned {
+    transform: none;
+  }
+  .headroom--pinned {
+    transform: none;
+  }
+  .headroom-wrapper {
+    height: auto !important;
+  }
+}

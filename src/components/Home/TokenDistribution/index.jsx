@@ -67,7 +67,7 @@ export const TokenDistribution = () => {
 
   return (
     <Card>
-      <h5 className='mb-2 text-gray-400 font-bold text-sm tracking-wider uppercase'>
+      <h5 className='mb-2 text-gray-400 font-bold text-xs xl:text-sm tracking-wider uppercase'>
         Token Distribution
       </h5>
       <Bar distros={sorted} />

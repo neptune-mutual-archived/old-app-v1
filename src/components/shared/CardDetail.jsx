@@ -6,7 +6,7 @@ const CardDetail = ({ title, value, right, tooltip }) => {
     <div className='flex flex-col w-1/2'>
       <div
         className={classNames(
-          'font-bold text-xs tracking-wider text-gray-400 uppercase whitespace-nowrap',
+          'font-bold text-xs tracking-wider text-gray-400 uppercase',
           right ? 'text-right' : ''
         )}
       >

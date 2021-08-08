@@ -23,7 +23,7 @@ export const TopFarms = () => {
   return (
     <Card>
       <div className='h-full max-h-full flex flex-col'>
-        <h5 className='mb-4 text-gray-400 font-bold text-sm tracking-wider uppercase'>
+        <h5 className='mb-4 text-gray-400 font-bold text-xs xl:text-sm tracking-wider uppercase'>
           Top Farms
         </h5>
         <div>

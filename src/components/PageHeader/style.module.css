@@ -1,0 +1,14 @@
+.logo {
+}
+
+@screen md {
+  .logo {
+    width: 180px;
+  }
+}
+
+@screen xl {
+  .logo {
+    width: 240px;
+  }
+}

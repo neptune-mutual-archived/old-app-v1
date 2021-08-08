@@ -50,7 +50,7 @@ export const ReleaseContent = ({
 
       setConfirming(true)
       await transactionPlaced(tx, {
-        title: name,
+        title: 'Bond: ' + name,
         feature: 'Bond Release',
         textPending: `Releasing ${formattedBonded} ${symbol} and ${formattedNEPAmount} ${NEPSymbol} from the Bond Pool`,
         textSuccess: `Released ${formattedBonded} ${symbol} and ${formattedNEPAmount} ${NEPSymbol} from the Bond Pool`

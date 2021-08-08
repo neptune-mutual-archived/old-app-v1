@@ -7,12 +7,15 @@ export const TotalSupplyAndRewards = () => {
   const { totalNepSupply, totalRewardAllocation } = useStatsContext()
   return (
     <Card>
-      <div className='flex flex-wrap justify-start gap-4 md:gap-0'>
-        <div className='md:w-7/12'>
-          <h5 className='mb-2 text-gray-400 font-bold text-sm tracking-wider uppercase'>
+      <div className='flex flex-wrap justify-start'>
+        <div className='mr-auto'>
+          <h5 className='mt-1 mb-2 text-gray-400 font-bold text-xs xl:text-sm tracking-wider uppercase'>
             Total Supply
           </h5>
-          <p className='font-numbers text-2xl md:text-4xl font-medium whitespace-nowrap'>
+          <p
+            className='font-numbers text-xl sm:text-2xl md:text-3xl xl:text-4xl font-medium whitespace-nowrap'
+            style={{ minWidth: '20ch' }}
+          >
             <CounterAnimation
               value={convertFromUnits(totalNepSupply || 0)
                 .decimalPlaces(6)
@@ -21,11 +24,14 @@ export const TotalSupplyAndRewards = () => {
             {' NEP'}
           </p>
         </div>
-        <div className='md:w-5/12'>
-          <h5 className='mb-2 text-gray-400 font-bold text-sm tracking-wider uppercase'>
+        <div>
+          <h5 className='mt-1 mb-2 text-gray-400 font-bold text-xs xl:text-sm tracking-wider uppercase'>
             Reward Allocation
           </h5>
-          <p className='font-numbers text-2xl md:text-4xl font-medium whitespace-nowrap'>
+          <p
+            className='font-numbers text-xl sm:text-2xl md:text-3xl xl:text-4xl font-medium whitespace-nowrap'
+            style={{ minWidth: '20ch' }}
+          >
             <CounterAnimation
               value={convertFromUnits(totalRewardAllocation || 0)
                 .decimalPlaces(6)

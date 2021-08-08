@@ -5,6 +5,7 @@ import ConnectWalletButton from './ConnectWallet/ConnectButton'
 import AccountMenu from './ConnectWallet/AccountMenu'
 import ConnectModal from './ConnectWallet/Modal'
 import { TransactionModal } from './ViewTransactions'
+import styles from './style.module.css'
 
 const PageHeader = () => {
   const { active } = useWeb3React()
@@ -29,7 +30,7 @@ const PageHeader = () => {
     <div className='w-full p-5 flex justify-between items-center'>
       <Link href='/'>
         <a>
-          <picture>
+          <picture className={styles.logo}>
             <source media='(min-width: 720px)' srcSet='/nep-logo.svg' />
             <source media='(min-width: 120px)' srcSet='/nep-icon.svg' />
             <img src='/nep-icon.svg' alt='Neptune Mutual' />

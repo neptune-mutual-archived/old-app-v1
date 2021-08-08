@@ -6,36 +6,36 @@ export const FarmsTable = ({ farms }) => {
       <div className='-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8'>
         <div className='py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8'>
           <div className='overflow-hidden sm:rounded-lg'>
-            <table className='min-w-full'>
+            <table className='min-w-full text-xs'>
               <thead>
                 <tr className='sr-only'>
                   <th
                     scope='col'
-                    className='px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'
+                    className='px-4 py-2 text-left font-medium text-gray-500 uppercase tracking-wider'
                   >
                     Name
                   </th>
                   <th
                     scope='col'
-                    className='px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'
+                    className='px-4 py-2 text-left font-medium text-gray-500 uppercase tracking-wider'
                   >
                     TVL
                   </th>
                   <th
                     scope='col'
-                    className='px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'
+                    className='px-4 py-2 text-left font-medium text-gray-500 uppercase tracking-wider'
                   >
                     APY
                   </th>
                 </tr>
               </thead>
-              <tbody className='divide-y divide-gray-700'>
+              <tbody className='divide-y divide-gray-700 text-xs xl:text-sm'>
                 {farms.map((farm, idx) => (
                   <tr key={idx}>
-                    <td className='px-4 py-2 whitespace-nowrap'>
+                    <td className='pr-4 py-2 whitespace-nowrap'>
                       <div className='flex items-center'>
                         <div>
-                          <div className='text-sm font-medium text-gray-400'>
+                          <div className='font-medium text-gray-400'>
                             {idx + 1}
                           </div>
                         </div>
@@ -47,19 +47,19 @@ export const FarmsTable = ({ farms }) => {
                           />
                         </div>
                         <div className='ml-4'>
-                          <div className='text-sm font-medium text-gray-300'>
+                          <div className='font-medium text-gray-300'>
                             {farm.name}
                           </div>
                         </div>
                       </div>
                     </td>
                     <td className='px-4 py-2 whitespace-nowrap'>
-                      <div className='text-sm text-gray-300'>$ {farm.tvl}</div>
+                      <div className='text-gray-300'>$ {farm.tvl}</div>
                     </td>
                     <td className='px-4 py-2 whitespace-nowrap'>
                       <div
                         className={classNames(
-                          'text-sm',
+                          '',
                           idx < 2 ? 'text-green-500' : 'text-gray-300'
                         )}
                       >

@@ -104,7 +104,7 @@ export const RateOfRewards = ({ maxPoolAPY, maxBondAPY }) => {
   })
 
   return (
-    <div className='py-6 px-7 flex flex-col flex-grow max-w-full'>
+    <div className='flex flex-col flex-grow max-w-full'>
       <div className='w-full'>
         <ReactEcharts option={option} className='mx-auto flex justify-center' />
       </div>

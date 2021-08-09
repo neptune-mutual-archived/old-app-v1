@@ -27,7 +27,6 @@ export const wallets = [
     name: 'WalletConnect',
     enabledIcon: '/networks/wallet-connect.svg',
     disabledIcon: '/networks/wallet-connect-disabled.svg',
-    disabled: true,
     connector: getWalletConnect,
     connectorName: ConnectorNames.WalletConnect
   }

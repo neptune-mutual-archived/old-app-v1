@@ -1,6 +1,6 @@
 import Option from './Option'
 
-const SelectWallet = ({ wallets, selected, setSelected, networkId }) => {
+const SelectWallet = ({ wallets, selected, setSelected }) => {
   return (
     <>
       <h4 className='mt-4 text-gray-400 font-semibold'>Select Wallet</h4>
@@ -8,7 +8,7 @@ const SelectWallet = ({ wallets, selected, setSelected, networkId }) => {
         {wallets.map((wallet) => {
           const { id, name, disabled, disabledIcon, enabledIcon } = wallet
 
-          const isDisabled = !networkId || disabled
+          const isDisabled = disabled
           const isActive = id === selected
           const icon = isDisabled ? disabledIcon : enabledIcon
 

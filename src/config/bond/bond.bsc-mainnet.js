@@ -10,7 +10,7 @@ const bonds = [
   {
     id: getId('1'),
     name: 'BUSD',
-    target: convertToUnits(1500000),
+    target: convertToUnits(0),
     fees: {
       entry: 0.025,
       other: 0,
@@ -45,7 +45,7 @@ const bonds = [
   {
     id: getId('2'),
     name: 'WBNB',
-    target: convertToUnits(1000),
+    target: convertToUnits(0),
     fees: {
       entry: 0.025,
       other: 0,
@@ -80,7 +80,7 @@ const bonds = [
   {
     id: getId('3'),
     name: 'USDT',
-    target: convertToUnits(1500000),
+    target: convertToUnits(0),
     fees: {
       entry: 0.025,
       other: 0,

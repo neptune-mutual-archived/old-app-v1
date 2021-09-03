@@ -48,7 +48,6 @@ const BondCard = ({ data }) => {
                 modalTypes={modalTypes}
                 info={data}
               >
-                <ApproveToSpend info={data} />
                 <ReleaseOrBond
                   info={data}
                   onBond={() => openModal(modalTypes.BOND)}

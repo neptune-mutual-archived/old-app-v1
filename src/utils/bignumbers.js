@@ -35,7 +35,7 @@ export const toWei = (x) => ether(x)
 
 // export const fromWei = (x) => toEther(x)
 
-// Mine
+// --- Utils ---
 
 export const calcPercent = (a, b) => {
   let divisor = b

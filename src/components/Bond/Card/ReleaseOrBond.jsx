@@ -1,8 +1,8 @@
+import React from 'react'
 import { useWeb3React } from '@web3-react/core'
 import { PlusSmIcon } from '@heroicons/react/solid'
 import { hasValue } from '../../../utils/bignumbers'
 import { IconButton } from '../../Buttons/Icon'
-import React from 'react'
 
 export const ReleaseOrBond = ({ onRelease, onBond, info }) => {
   const { active } = useWeb3React()

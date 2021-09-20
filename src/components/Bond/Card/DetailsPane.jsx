@@ -2,7 +2,7 @@ import CakeIcon from '../../shared/icons/CakeIcon'
 import CardDetail from '../../shared/CardDetail'
 import { getBondDetails } from '../../../utils/data/bond'
 
-const DetailsPane = ({ flipCard, data }) => {
+const DetailsPane = ({ data }) => {
   const isPancakeLinked = true
   const details = getBondDetails(data)
 

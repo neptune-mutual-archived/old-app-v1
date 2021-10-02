@@ -7,7 +7,6 @@ import { FlipCard, FlipCardBack, FlipCardFront } from '../../shared/FlipCard'
 import { ComingSoonCardFront } from '../../shared/ComingSoonCardFront'
 import { percentFormatter } from '../../../utils/formatter'
 import { Ribbon } from '../../shared/CardRibbon'
-import { ApproveToSpend } from './ApproveToSpend'
 import { ReleaseOrBond } from './ReleaseOrBond'
 
 const modalTypes = {
@@ -20,7 +19,6 @@ const BondCard = ({ data }) => {
   const [type, setType] = useState(modalTypes.BOND)
   const [showBack, setShowBack] = React.useState(false)
 
-  // eslint-disable-next-line no-unused-vars
   const flipCard = useCallback(() => setShowBack((x) => !x), [])
   const closeModal = setOpen.bind(setOpen, false)
 

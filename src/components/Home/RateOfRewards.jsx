@@ -55,7 +55,7 @@ const getOption = ({ maxPoolAPY, maxBondAPY }) => {
         },
         data: [
           {
-            value: maxPoolAPY, // 175
+            value: maxPoolAPY,
             name: 'POOL',
             title: {
               color: '#ccc',
@@ -67,7 +67,7 @@ const getOption = ({ maxPoolAPY, maxBondAPY }) => {
             }
           },
           {
-            value: maxBondAPY, // 180
+            value: maxBondAPY,
             name: 'BOND',
             title: {
               color: '#ccc',

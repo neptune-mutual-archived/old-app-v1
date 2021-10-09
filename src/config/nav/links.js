@@ -3,10 +3,6 @@ import {
   HomeIconFilled
 } from '../../components/shared/icons/HomeIcon'
 import {
-  BondIconOutlined,
-  BondIconFilled
-} from '../../components/shared/icons/BondIcon'
-import {
   FarmIconOutlined,
   FarmIconFilled
 } from '../../components/shared/icons/FarmIcon'
@@ -25,12 +21,6 @@ const data = [
     path: '/',
     icon: HomeIconOutlined,
     activeIcon: HomeIconFilled
-  },
-  {
-    name: 'Bond',
-    path: '/bond',
-    icon: BondIconOutlined,
-    activeIcon: BondIconFilled
   },
   {
     name: 'Pool',

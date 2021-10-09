@@ -1,7 +1,6 @@
 import Head from 'next/head'
 
 import { Banner } from '../components/Home/Banner'
-import { InitialFarmOffering } from '../components/Home/InitialFarmOffering'
 import { MyLiquidityRewards } from '../components/Home/MyLiquidityRewards'
 import { NepTokenDetails } from '../components/Home/NepTokenDetails'
 import { RateOfRewards } from '../components/Home/RateOfRewards'
@@ -35,7 +34,6 @@ export default function Home() {
           <aside className='self-stretch flex flex-col md:grid-cols-2 xl:grid-cols-1'>
             <div className='xl:py-6 xl:px-12 xl:bg-gray-400 xl:bg-opacity-5 xl:rounded-2xl flex-grow'>
               <NepTokenDetails />
-              <InitialFarmOffering />
               <MyLiquidityRewards />
             </div>
           </aside>

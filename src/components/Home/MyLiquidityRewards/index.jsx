@@ -63,7 +63,7 @@ export const MyLiquidityRewards = () => {
   ]
 
   return (
-    <div className='bg-yellow-200 px-12 py-8 rounded-xl text-gray-800 relative overflow-hidden'>
+    <div className='bg-yellow-200 px-12 py-8 rounded-xl text-gray-800 relative overflow-hidden mt-4'>
       <h3 className='text-sm text-gray-600 opacity-75'>My Liquidity Rewards</h3>
       <div className='font-numbers text-2xl font-medium mt-1 mb-3'>
         {convertFromUnits(total).decimalPlaces(2).toNumber()} NEP

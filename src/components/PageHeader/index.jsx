@@ -37,7 +37,8 @@ const PageHeader = () => {
           </picture>
         </a>
       </Link>
-
+      <div>&nbsp;</div>
+{/* 
       {active && (
         <AccountMenu
           openConnectModal={openConnectModal}
@@ -47,7 +48,7 @@ const PageHeader = () => {
       {!active && <ConnectWalletButton openModal={openConnectModal} />}
 
       <ConnectModal {...connectModalProps} />
-      <TransactionModal {...transactionModalProps} />
+      <TransactionModal {...transactionModalProps} /> */}
     </div>
   )
 }

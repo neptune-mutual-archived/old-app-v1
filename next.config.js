@@ -8,7 +8,6 @@ module.exports = withSvgr({
     ignoreDuringBuilds: true
   },
   future: {
-    webpack5: true,
     strictPostcssConfiguration: false
   }
 })
